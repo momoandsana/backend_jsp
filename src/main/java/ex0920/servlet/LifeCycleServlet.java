@@ -27,6 +27,7 @@ public class LifeCycleServlet extends HttpServlet {
         out.println("</body></html>");
 //        브라우저에서는 get 요청만 가능
         System.out.println("Received get request");
+//        resp.sendRedirect("life");
     }
 
     @Override
@@ -39,16 +40,30 @@ public class LifeCycleServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>LifeCycleServlet - POST 요청 처리</h1>");
         out.println("</body></html>");
+//        resp.sendRedirect("life");
+
+        System.out.println("Received post request");
     }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("service");
+
+        //전송된 정보를 받기
+        String userId = req.getParameter("userId");// <input name="userId"
+        String userName = req.getParameter("userName");// <input name="userId"
+        String userPwd = req.getParameter("userPwd");// <input name="userId"
+
+        System.out.println(" userId="+userId);
+        System.out.println(" userName="+userName);
+        System.out.println(" userPwd="+userPwd);
+
         super.service(req, resp);
     }
 
     @Override
     public void destroy() {
+        System.out.println("destroy");
         super.destroy();
     }
 }
