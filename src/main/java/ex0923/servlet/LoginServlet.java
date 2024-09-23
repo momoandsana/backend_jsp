@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
 
 
         //전송된 데이터를 받기, html 의 name 으로 구분
+        // request.getParameter 는 기본으로  String 형식
         String id = request.getParameter("id");
         String pwd = request.getParameter("pwd");
         String name = request.getParameter("name");
@@ -57,7 +58,11 @@ public class LoginServlet extends HttpServlet {
 //            // WAS 에서 브라우저로 보내는 경우 인코딩 필요
 //
 //            // 새로운 request, response 를 생성해서 이동한다
-//            response.sendRedirect("LoginOk.jsp?name="+name); // 이전의 request 정보들은 유지되지 않는다->라다이렉트이기 때문에
+//            response.sendRedirect("LoginOk.jsp?name="+name);
+//            이전의 request 정보들은 유지되지 않는다->라다이렉트이기 때문에
+              //리다이렉트이기 때문에 정보를 직접 넣어서 보내야 한다
+
+//            -----------------------------------------
 
               // forward 방식으로 이동하기
             RequestDispatcher rd = request.getRequestDispatcher("LoginOk.jsp");
@@ -66,6 +71,7 @@ public class LoginServlet extends HttpServlet {
         }
         else
         {
+            response.setContentType("text/html;charset=UTF-8");
             // 에러메시지 출력
             PrintWriter out = response.getWriter();
             out.println("<script>");
