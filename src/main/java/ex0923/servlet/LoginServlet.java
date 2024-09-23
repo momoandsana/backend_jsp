@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
 
     public LoginServlet() {
-        System.out.println("loginservlet created");
+        System.out.println("loginServlet created");
     }
 
     /**

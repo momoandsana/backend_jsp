@@ -38,16 +38,16 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <servlet-name>bloodServlet</servlet-name>
-    <servlet-class>ex0923.servlet.BloodServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+<!--  <servlet>-->
+<!--    <servlet-name>bloodServlet</servlet-name>-->
+<!--    <servlet-class>ex0923.servlet.BloodServlet</servlet-class>-->
+<!--    <load-on-startup>1</load-on-startup>-->
+<!--  </servlet>-->
 
-  <servlet-mapping>
-    <servlet-name>bloodServlet</servlet-name>
-    <url-pattern>/blood</url-pattern>
-  </servlet-mapping>
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>bloodServlet</servlet-name>-->
+<!--    <url-pattern>/blood</url-pattern>-->
+<!--  </servlet-mapping>-->
 
 
 <!--dtd에 정의된 요소들이 누락되어 있음-> 그래서 web-app 에 빨간줄 생김, 실행하는데 문제없음-->
