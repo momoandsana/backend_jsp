@@ -28,6 +28,7 @@ public class LifeCycleServlet extends HttpServlet {
 //        브라우저에서는 get 요청만 가능
         System.out.println("Received get request");
 //        resp.sendRedirect("life");
+        // get 은 url 에 쿼리문이 붙어서 옴
     }
 
     @Override
@@ -43,9 +44,11 @@ public class LifeCycleServlet extends HttpServlet {
 //        resp.sendRedirect("life");
 
         System.out.println("Received post request");
+        // post 는 url 깔끔하게 옴
     }
 
     @Override
+    //protected service를 넣어야 함. service 오버라이드 하면 doGet doPost 자동으로 요청이 가지 않는다
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("service");
 
@@ -58,7 +61,7 @@ public class LifeCycleServlet extends HttpServlet {
         System.out.println(" userName="+userName);
         System.out.println(" userPwd="+userPwd);
 
-        super.service(req, resp);
+        super.service(req, resp); // 오버라이딩 했지만 이 코드 덕분에 자동으로 다시 doGet, doPost 자동으로 요청
     }
 
     @Override

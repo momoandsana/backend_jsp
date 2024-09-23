@@ -13,6 +13,7 @@
     <servlet-class>ex0920.servlet.LifeCycleServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
 <!--    was가 start될 때 미리 메모리에 생성-->
+<!--    숫자가 낮을수록 우선순위가 높음-->
   </servlet>
 
 
@@ -23,4 +24,18 @@
 <!--    url 패턴은 무조건 루트를 지정해야 한다-->
 <!--    /life 로 하면 LifeCycleServlet 이 클래스를 호출하라는 의미-->
   </servlet-mapping>
+
+<!--  &#45;&#45;&#45;&#45;&#45;&#45; 위에 servlet, servlet-mapping 은 세트 -&#45;&#45;&#45;&#45;-->
+
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>ex0923.servlet.LoginServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+<!--dtd에 정의된 요소들이 누락되어 있음-> 그래서 web-app 에 빨간줄 생김, 실행하는데 문제없음-->
 </web-app>
